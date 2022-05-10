@@ -221,12 +221,12 @@ img {
   max-width: 100%;
 }
 
-#aboutPageBlurb{
-  font-size: 20px;
+.aboutPageBlurb {
+  font-size: 18px !important;
   font-weight: bold;
 }
 
-#aboutPageBlurb a {
+.aboutPageBlurb a {
   color:red !important;
 }
 
