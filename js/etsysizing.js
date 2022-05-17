@@ -8,8 +8,9 @@
 
     function resize() {
 
-        var min_576 = window.matchMedia('@media (min-width: 1100px)').addEventListener("change", function () {
-            products = grid5x3;
+        var min_576 = window.matchMedia('@media only screen and (min-width: 992px) and (max-width: 1200px)').addEventListener("change", function () {
+            products.innerText = grid5x3;
+            window.location.reload();
         });
 
         // var min_2500 = window.matchMedia('only screen and (min-width: 2500px)').addEventListener("change", function () {
