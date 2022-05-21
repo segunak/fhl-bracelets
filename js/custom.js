@@ -229,6 +229,7 @@
     $('#mc_embed_signup').find('form').ajaxChimp();
   }
   mailChimp();
+  
 
   //------- makeTimer js --------//  
   function makeTimer() {
