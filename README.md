@@ -1,3 +1,3 @@
 # Faith, Hope and Love Bracelets
 
-fhlbracelets.com
+Repo for the [Faith, Hope and Love Bracelets](fhlbracelets.com) website.
