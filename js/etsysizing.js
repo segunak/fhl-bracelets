@@ -9,23 +9,28 @@
 let resizeEtsyMini = () => {
     let minColumns = 1;
     let maxColumns = 5;
-    let etsyMiniColumns = Math.floor(document.documentElement.clientWidth / 184);
+    let clientWidth = document.documentElement.clientWidth;
+    let etsyMiniColumns = Math.floor(clientWidth / 184);
+
     if (etsyMiniColumns < minColumns) {
         etsyMiniColumns = minColumns;
     }
     else if (etsyMiniColumns > maxColumns) {
         etsyMiniColumns = maxColumns
     }
+
     // Row value can be whatever, browsers have infinite scroll these days.
-    setEtsyMiniSize(5, etsyMiniColumns);
+    setEtsyMiniSize(5, etsyMiniColumns, clientWidth);
 }
 
-let setEtsyMiniSize = (rows, columns) => {
+let setEtsyMiniSize = (rows, columns, iframeWidth) => {
     let etsyIframe = document.getElementById("etsy-iframe-container").getElementsByTagName("iframe");
     let etsyURL = new URL(etsyIframe[0].src);
     etsyURL.searchParams.set("rows", rows);
     etsyURL.searchParams.set("columns", columns);
+
     etsyIframe[0].src = etsyURL.toString();
+    etsyIframe[0].width = iframeWidth;
 }
 
 // On initial page load, and on every window resize, call resizeEtsyMini.
